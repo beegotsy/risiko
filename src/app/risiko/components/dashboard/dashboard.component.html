@@ -1,0 +1,112 @@
+<div class="container my-5">
+  <div class="row mb-3">
+    <div class="col-md">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Attacco</span>
+        </div>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="player1"
+          placeholder="carrarmati in attacco"
+        />
+      </div>
+    </div>
+    <div class="col-md-auto">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button type="button" class="btn btn-danger" (click)="exec()">
+            💣
+          </button>
+        </div>
+        <input
+          type="number"
+          class="form-control text-center"
+          [(ngModel)]="iterations"
+          placeholder="iterazioni"
+        />
+        <div class="input-group-append">
+          <button type="button" class="btn btn-danger" (click)="exec()">
+            💣
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="input-group mb-3">
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="player2"
+          placeholder="carrarmati in difesa"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text">Difesa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3" *ngIf="test1">
+    <div class="col-md-6">
+      <h4>
+        Vittore
+        <span class="badge badge-success"
+          >{{ test1.wins.percentage.toFixed(3) }}% ({{ test1.wins.fixed }})</span
+        >
+      </h4>
+    </div>
+    <div class="col-md-6 text-right">
+      <h4>
+        Sconfitte
+        <span class="badge badge-danger"
+          >{{ test1.losses.percentage.toFixed(3) }}% ({{ test1.losses.fixed }})</span
+        >
+      </h4>
+    </div>
+  </div>
+  <div class="row mb-3" *ngIf="test2 || test3">
+    <div class="col-md-6">
+      <h4>Attaccante - carrarmati rimasti<small> in caso di vittoria</small></h4>
+      <table class="table table-sm" *ngIf="test2">
+        <thead>
+          <tr>
+            <th scope="col">Rimasti</th>
+            <th scope="col">Percentuale</th>
+            <th scope="col">Totale</th>
+          </tr>
+        </thead>
+        <tbody class="table-striped">
+          <ng-container *ngFor="let remains of test2; index as i">
+            <tr *ngIf="remains">
+              <th scope="row">{{ i }}</th>
+              <td>{{ remains.percentage.toFixed(3) }}%</td>
+              <td>{{ remains.fixed }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h4>Difensore - carrarmati rimasti<small> in caso di sconfitta</small></h4>
+      <table class="table table-sm" *ngIf="test3">
+        <thead>
+          <tr>
+            <th scope="col-md">Rimasti</th>
+            <th scope="col-md">Percentuale</th>
+            <th scope="col-md">Totale</th>
+          </tr>
+        </thead>
+        <tbody class="table-striped">
+          <ng-container *ngFor="let remains of test3; index as i;">
+            <tr *ngIf="remains">
+              <th scope="row">{{ i }}</th>
+              <td>{{ remains.percentage.toFixed(3) }}%</td>
+              <td>{{ remains.fixed }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
