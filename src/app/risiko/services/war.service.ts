@@ -38,8 +38,8 @@ export class WarService {
 
     while (
       finalAttackers > 1 &&
-      finalDefenders > 0
-      /* && finalAttackers > finalDefenders */
+      finalDefenders > 0 &&
+      !(finalAttackers <= finalDefenders && finalAttackers < 4)
     ) {
       avaibleAtt = Math.min(finalAttackers - 1, 3);
       avaibleDef = Math.min(finalDefenders, 3);
@@ -84,11 +84,11 @@ export class WarService {
 
   calculateRemainAttackers(
     warResults: WarResult[],
-    onlyWins = false
+    outcomeFilter: Outcome
   ): { fixed: number; percentage: number }[] {
     const remainAttackers: number[] = [];
-    const filteredResults = onlyWins
-      ? warResults.filter(x => x.outcome === 'win')
+    const filteredResults = outcomeFilter
+      ? warResults.filter(x => x.outcome === outcomeFilter)
       : warResults;
     const length = filteredResults.length;
     filteredResults
@@ -105,11 +105,11 @@ export class WarService {
 
   calculateRemainDefenders(
     warResults: WarResult[],
-    onlyLosses = false
+    outcomeFilter: Outcome
   ): { fixed: number; percentage: number }[] {
     const remainDefenders: number[] = [];
-    const filteredResults = onlyLosses
-      ? warResults.filter(x => x.outcome === 'loss')
+    const filteredResults = outcomeFilter
+      ? warResults.filter(x => x.outcome === outcomeFilter)
       : warResults;
     const length = filteredResults.length;
     filteredResults

@@ -109,4 +109,39 @@
       </table>
     </div>
   </div>
+  <div class="row mb-3" *ngIf="test4 || test1">
+    <div class="col-md-6">
+      <h4>Attaccante - carrarmati rimasti<small> in caso di sconfitta</small></h4>
+      <table class="table table-sm" *ngIf="test4">
+        <thead>
+          <tr>
+            <th scope="col">Rimasti</th>
+            <th scope="col">Percentuale</th>
+            <th scope="col">Totale</th>
+          </tr>
+        </thead>
+        <tbody class="table-striped">
+          <ng-container *ngFor="let remains of test4; index as i">
+            <tr *ngIf="remains">
+              <th scope="row">{{ i }}</th>
+              <td>{{ remains.percentage.toFixed(3) }}%</td>
+              <td>{{ remains.fixed }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h4>Attaccante - carrarmati rimasti<small> in caso di vittoria</small></h4>
+      <div style="display: block">
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="true"
+          [chartType]="'bar'">
+        </canvas>
+      </div>
+    </div>
+  </div>
 </div>
