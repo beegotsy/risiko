@@ -9,7 +9,7 @@
       "urls": [
         "/risiko/favicon.ico",
         "/risiko/index.html",
-        "/risiko/main.9cfc0a77a98610af8515.js",
+        "/risiko/main.fc1fb61da1e1eecbefbc.js",
         "/risiko/polyfills.7e61eeabe4f75fabb7d3.js",
         "/risiko/runtime.26209474bfa8dc87a77c.js",
         "/risiko/styles.e4c744201d20db858da1.css"
@@ -44,8 +44,8 @@
     "/risiko/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/risiko/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/risiko/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/risiko/index.html": "06d28f377cac197f09f33cdaee3fbab36d5221f6",
-    "/risiko/main.9cfc0a77a98610af8515.js": "39c743c72d307dd8a313757409bed82d57f11dd0",
+    "/risiko/index.html": "ce5b502b8cf34fdca6a629e3d2fa0b1f98893eec",
+    "/risiko/main.fc1fb61da1e1eecbefbc.js": "4f322148c46dc5e7009a78c85128c3f60ba98981",
     "/risiko/polyfills.7e61eeabe4f75fabb7d3.js": "6946e10a03311677a01490b8e91741668e64e17e",
     "/risiko/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "/risiko/styles.e4c744201d20db858da1.css": "d0dc064df66f78ab7a1f96395a852445146fc699"
